@@ -1,12 +1,22 @@
 const express = require('express')
 const routes = express.Router()
+const ProductController = require('./app/controllers/ProductController')
 
 
+//rota para imprimir layout
 routes.get('/', function (req, res) {
     return res.render("layout.njk")
 })
 
-routes.get('')
+//rota para criar produto
+
+routes.get('/products/create', ProductController.create);
+
+//mascara para redirecionar p create
+
+routes.get('/ads/create', function (req, res) {
+    return res.redirect("/products/create")
+})
 
 
 
