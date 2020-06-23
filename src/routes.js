@@ -12,7 +12,9 @@ routes.get('/', function (req, res) {
 
 routes.get('/products/create', ProductController.create);
 
-//mascara para redirecionar p create
+routes.post('/products', ProductController.post);
+
+//mascara para redirecionar p create -ALIAS-
 
 routes.get('/ads/create', function (req, res) {
     return res.redirect("/products/create")
