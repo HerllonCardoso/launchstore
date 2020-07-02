@@ -11,8 +11,11 @@ routes.get('/', function (req, res) {
 //rota para criar produto
 
 routes.get('/products/create', ProductController.create);
+routes.get('/products/:id/edit', ProductController.edit);
 
 routes.post('/products', ProductController.post);
+routes.put('/products', ProductController.put);
+
 
 //mascara para redirecionar p create -ALIAS-
 
